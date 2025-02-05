@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background: linear-gradient(to right bottom, #ff9a9e, #21d3eb);
+            color: #fff;
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            font-size: 60px;
+            color: #fff;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        #countDisplay {
+            font-size: 30px;
+            text-align: center;
+            color: #fff;
+            align-items: center;
+            border: 5px black;
+            padding: 20px 30px;
+            border-radius: 15px;
+            background: pink;
+        }
+
+        button {
+            font-size: 30px;
+            padding: 15px 30px;
+            margin: 20px 10px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Counter</h1>
+        <p id="countDisplay">0</p>
+        <button onclick="increase()"><b>+</b></button>
+        <button onclick="decrease()"><b>-</b></button>
+        <button onclick="reset()">Reset</button>
+    </div>
+    <script>
+        let count = 0;
+        let countDisplay = document.getElementById("countDisplay")
+
+        const changeCounter = (count) => {
+            countDisplay.innerHTML = count
+        }
+
+        function increase() {
+            count++;
+            changeCounter(count)
+        }
+
+        function decrease() {
+            if (count > 0) {
+                count--;
+                changeCounter(count)
+            }
+        }
+
+        function reset() {
+            count = 0;
+            changeCounter(count)
+        }
+    </script>
+</body>
+
+</html>
